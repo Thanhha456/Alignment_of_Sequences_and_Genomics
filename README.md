@@ -3,7 +3,7 @@
 #**Alignments of Sequences**
 
 *Input:* Given an alphabet Σ and a scoring matrix M defined over Σ ∪ {′−′}, the dynamic programming method computed a score that measured the similarity of two sequences X and Y based on the values of this scoring matrix. In particular, this method involved computing an alignment matrix S between X and Y whose entry Sij​ scored the similarity of the substrings X[0…i−1] and Y[0…j−1].  
-*Output:* Implement four functions. The first pair of functions will return matrices that we will use in computing the alignment of two sequences. The second pair of functions will return global and local alignments of two input sequences based on a provided alignment matrix. You will then use these functions in Application to analyze two problems involving comparison of similar sequences.
+*Output:* Implement four functions. The first pair of functions will return matrices that we will use in computing the alignment of two sequences. The second pair of functions will return global and local alignments of two input sequences based on a provided alignment matrix. You will then use these functions in Application to analyze two problems involving comparison of similar sequences.  
 #**Applications to Genomics**
 
 **Comparing two proteins**  
@@ -62,17 +62,18 @@ To begin, load this list of 79339 words. Then, write a function check_spelling(c
 Use your function check_spelling to compute the set of words within an edit distance of one from the string "humble" and the set of words within an edit distance of two from the string "firefly". (Note this is not "fruitfly".)
 
 #**Outcomes:**  
--**Comparing two proteins:**  
+
+**- Comparing two proteins:**  
 Local alignment score: 875  
-Humman ='HSGVNQLGGVFVNGRPLPDSTRQKIVELAHSGARPCDISRILQVSNGCVSKILGRYYETGSIRPRAIGGSKPRVATPEVVSKIAQYKRECPSIFAWEIRDRLLSEGVCTNDNIPSVSSINRVLRNLASEK-QQ'  
-Fruitfly ='HSGVNQLGGVFVGGRPLPDSTRQKIVELAHSGARPCDISRILQVSNGCVSKILGRYYETGSIRPRAIGGSKPRVATAEVVSKISQYKRECPSIFAWEIRDRLLQENVCTNDNIPSVSSINRVLRNLAAQKEQQ'  
+Humman = 'HSGVNQLGGVFVNGRPLPDSTRQKIVELAHSGARPCDISRILQVSNGCVSKILGRYYETGSIRPRAIGGSKPRVATPEVVSKIAQYKRECPSIFAWEIRDRLLSEGVCTNDNIPSVSSINRVLRNLASEK-QQ'  
+Fruitfly = 'HSGVNQLGGVFVGGRPLPDSTRQKIVELAHSGARPCDISRILQVSNGCVSKILGRYYETGSIRPRAIGGSKPRVATAEVVSKISQYKRECPSIFAWEIRDRLLQENVCTNDNIPSVSSINRVLRNLAAQKEQQ'  
 Length = 133  
 Corresponding procentage similarities to  a third sequence ConsensusPAXDomain as follows:
-* human_consensus_agree = 73% (97 characters to 133)
-* fruitfly_consensus_agree = 70% ( 94 characters to 133)  
+* human_consensus_agree = 73% (97 characters to 133).
+* fruitfly_consensus_agree = 70% ( 94 characters to 133).  
 The probablity that 97 characters to match 133 elements sequence, whose elements choisen from a 23 character alphabet is less the 10^-100, so not likely the similarity between human vs. consensus PAX domain due to chance. 
 
--**Hypothesis testing:**  
+**- Hypothesis testing:**  
 From the generated grapic of the Null Hypothesis Statistic Test, which has the normal distribution,we can see that the vast majority of the distribution peak roughly centered at 50.   
 From the formulas,the results given:
 
@@ -82,7 +83,7 @@ From the formulas,the results given:
 We will assume that 99% of the scrores are within three standard deviations of the mean for this distribution. The acctual score of the Human/Fruityfly z_score is more than 100 standard deviations away from the mean of the distribution. If we assume that each multiple of three standard deviation reduces the likelt hood of this score arising randomly by 10^-2, the resulting proprability is around 10^-67
 So the likelihood that the human sequence to math 73%  with any other random mutated sequences of fruityfly is almost zero.
  
--**Spelling correction:**  
+**- Spelling correction:**  
 Consider the case when seq_x = "a", seq_y = "a", edit_distance = 0 (no action needed),score(seq_x,seq_y) = 2 then diag_score = 2.  
 when seq_x = "a", seq_y = "", edit_distance = 1 (insert or delettion), score(seq_x,seq_y) = 0 then dash_score = 0.  
 when seq_x = "a", seq_y = "b", edit_distance = 1 (substitution), score(seq_x,seq_y) = 1 then off_diag_score = 1.  
