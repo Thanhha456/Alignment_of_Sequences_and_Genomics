@@ -1,3 +1,6 @@
+Project for assessment in "Algorithmic Thinking (Part 2)" course at Rice university.  
+https://www.coursera.org/learn/algorithmic-thinking-2
+
 #**Assessment: Computing Alignments of Sequences and Applications to Genomics and Beyond**
 
 #**Alignments of Sequences**
@@ -20,9 +23,9 @@ consider the similarity of the two sequences in the local alignment computed in 
 
 Load the file ConsensusPAXDomain. For each of the two sequences of the local alignment computed in Question 1, do the following:
 
-    Delete any dashes '-' present in the sequence.
-    Compute the global alignment of this dash-less sequence with the ConsensusPAXDomain sequence.
-    Compare corresponding elements of these two globally-aligned sequences (local vs. consensus) and compute the percentage of elements in these two sequences that agree.  
+- Delete any dashes '-' present in the sequence.
+- Compute the global alignment of this dash-less sequence with the ConsensusPAXDomain sequence.  
+- Compare corresponding elements of these two globally-aligned sequences (local vs. consensus) and compute the percentage of elements in these two sequences that agree.  
 To reiterate, you will compute the global alignments of local human vs. consensus PAX domain as well as local fruitfly vs. consensus PAX domain. Your answer should be two percentages: one for each global alignment. Enter each percentage below. Be sure to label each answer clearly and include three significant digits of precision.
 s it likely that the level of similarity exhibited by the answers could have been due to chance? In particular, if you were comparing two random sequences of amino acids of length similar to that of HumanEyelessProtein and FruitflyEyelessProtein, would the level of agreement in these answers be likely? To help you in your analysis, there are 23 amino acids with symbols in the string ("ACBEDGFIHKMLNQPSRTWVYXZ". Include a short justification for your answer.
 
@@ -79,7 +82,8 @@ From the formulas,the results given:
 
 * mean = 52 
 * standard_dev = 6.8
-* z_score = 122  
+* z_score = 122    
+
 We will assume that 99% of the scrores are within three standard deviations of the mean for this distribution. The acctual score of the Human/Fruityfly z_score is more than 100 standard deviations away from the mean of the distribution. If we assume that each multiple of three standard deviation reduces the likelt hood of this score arising randomly by 10^-2, the resulting proprability is around 10^-67
 So the likelihood that the human sequence to math 73%  with any other random mutated sequences of fruityfly is almost zero.
  
